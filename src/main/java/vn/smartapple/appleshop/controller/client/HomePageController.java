@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import vn.smartapple.appleshop.domain.Product;
+import vn.smartapple.appleshop.domain.dto.RegisterDTO;
 import vn.smartapple.appleshop.service.ProductService;
 
 @Controller
@@ -21,6 +22,12 @@ public class HomePageController {
         List<Product> products = this.productService.getAllProducts();
         model.addAttribute("products", products);
         return "client/homepage/home";
+    }
+
+    @GetMapping("/access-deny")
+    public String getDenyPage(Model model) {
+
+        return "client/auth/deny";
     }
 
 }
