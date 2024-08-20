@@ -6,9 +6,6 @@
                     <div class="col-lg-3 col-sm-6 pb-3">
                         <div class="footer-menu">
                             <h2>Apple Shop</h2>
-                            <p>Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit. Gravida
-                                massa
-                                volutpat aenean odio erat nullam fringilla.</p>
                         </div>
                     </div>
                     <div class="col-lg-2 col-sm-6 pb-3">
