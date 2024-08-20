@@ -54,9 +54,12 @@
                                         <p class="product-price">
                                             <fmt:formatNumber type="number" value="${product.price}" />đ
                                         </p>
-                                        <a href="#" class="btn-add-cart btn px-3">
-                                            <i class="fa fa-shopping-bag me-2"></i> ADD TO CART
-                                        </a>
+                                        <form action="/add-product-to-cart/${product.id}" method="post">
+                                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                                            <button class="btn-add-cart btn px-3">
+                                                <i class="fa fa-shopping-bag me-2"></i> ADD TO CART
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
