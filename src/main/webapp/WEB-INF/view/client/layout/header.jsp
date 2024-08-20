@@ -37,8 +37,8 @@
                                     <form action="/logout" method="post">
                                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                                         <button class="dropdown-item" href="#">Đăng xuất</button>
+                                    </form>
                                 </li>
-                                </form>
 
                             </ul>
                         </div>
