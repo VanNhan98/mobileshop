@@ -12,12 +12,18 @@
 
                 <div class="col-6 col-md-4 other d-flex px-5">
                     <c:if test="${not empty pageContext.request.userPrincipal}">
-                        <li><input placeholder=" Search" type="text"><i class="fa-solid fa-magnifying-glass"></i></li>
-                        <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <a href="/cart" class="position-relative me-4 my-auto" style="font-size: 1.4rem;">
+                            <i class="fa-solid fa-cart-shopping" style="color: #DEAE6F;"></i>
+                            <span
+                                class="position-absolute rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
+                                style="top: -5px; left: 15px; height: 16px; min-width: 18px; font-size: 0.8rem; background-color: rgb(188, 239, 101);">
+                                ${sessionScope.sum}
+                            </span>
+                        </a>
                         <div class="dropdown my-auto">
                             <a href="#" class="dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
                                 aria-expanded="false" data-bs-toggle="dropdown" aria-expanded="false"
-                                style="color: black;">
+                                style="color: #DEAE6F; font-size: 1.4rem;">
                                 <i class="fa-solid fa-user"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end p-4" arialabelledby="dropdownMenuLink">
@@ -39,12 +45,12 @@
                                         <button class="dropdown-item" href="#">Đăng xuất</button>
                                     </form>
                                 </li>
-
                             </ul>
                         </div>
                     </c:if>
                     <c:if test="${empty pageContext.request.userPrincipal}">
-                        <a href="/login" style="text-decoration: none; color: black; font-weight: bold;">
+                        <a href="/login"
+                            style="text-decoration: none; color: #DEAE6F; font-weight: bold; font-size: 1.2rem;">
                             Đăng Nhập
                         </a>
                     </c:if>

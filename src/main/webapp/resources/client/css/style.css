@@ -42,7 +42,7 @@
     .menu li a {
 
         text-decoration: none;
-        color: black;
+        color: #DEAE6F;
     }
 
     .menu li:hover {
@@ -61,7 +61,7 @@
 
 
     .other li i {
-        color: black;
+        color: #DEAE6F;
         margin: 0 16px;
         cursor: pointer;
     }
@@ -199,5 +199,5 @@
     }
 
     #footer {
-        background-color: #fbfbfb;
+        background-color: #f7f5f2;
     }
