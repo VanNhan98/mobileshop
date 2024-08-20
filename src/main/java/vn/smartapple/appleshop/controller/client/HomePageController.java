@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import vn.smartapple.appleshop.domain.Product;
-import vn.smartapple.appleshop.domain.dto.RegisterDTO;
 import vn.smartapple.appleshop.service.ProductService;
 
 @Controller
