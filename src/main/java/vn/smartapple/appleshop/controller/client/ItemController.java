@@ -1,6 +1,8 @@
 package vn.smartapple.appleshop.controller.client;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,7 @@ import vn.smartapple.appleshop.domain.Cart;
 import vn.smartapple.appleshop.domain.CartDetail;
 import vn.smartapple.appleshop.domain.User;
 import vn.smartapple.appleshop.service.ProductService;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class ItemController {
@@ -45,7 +48,7 @@ public class ItemController {
 
         currentUser.setId(id);
         Cart cart = this.productService.findCartByUser(currentUser);
-        List<CartDetail> cartDetails = cart.getCartDetails();
+        List<CartDetail> cartDetails = cart == null ? new ArrayList<>() : cart.getCartDetails();
         double totalPrice = 0;
         for (CartDetail cd : cartDetails) {
             totalPrice += cd.getPrice() * cd.getQuantity();
@@ -55,6 +58,14 @@ public class ItemController {
         model.addAttribute("totalPrice", totalPrice);
 
         return "client/cart/show";
+    }
+
+    @PostMapping("/delete-cart-product/{id}")
+    public String deleteCartDetail(@PathVariable long id, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+        long cartDetailId = id;
+        this.productService.handleRemoveCartDetail(cartDetailId, session);
+        return "redirect:/cart";
     }
 
 }
