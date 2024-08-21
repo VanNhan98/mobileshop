@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import jakarta.validation.constraints.Pattern;
 import vn.smartapple.appleshop.domain.dto.RegisterDTO;
 import vn.smartapple.appleshop.service.UserService;
 

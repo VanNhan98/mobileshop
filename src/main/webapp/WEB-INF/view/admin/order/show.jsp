@@ -1,85 +1,85 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-        <!DOCTYPE html>
-        <html lang="en">
+        <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+            <!DOCTYPE html>
+            <html lang="en">
 
-        <head>
-            <meta charset="utf-8" />
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-            <title>Order</title>
-            <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-            <link href="css/styles.css" rel="stylesheet" />
-            <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        </head>
+            <head>
+                <meta charset="utf-8" />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+                <title>Order</title>
+                <link href="/css/styles.css" rel="stylesheet" />
+                <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+            </head>
 
-        <body class="sb-nav-fixed">
-            <!-- start include header -->
-            <jsp:include page="../layout/header.jsp" />
-            <!-- end include header -->
-            <div id="layoutSidenav">
-                <!-- start include sidebar -->
-                <jsp:include page="../layout/sidebar.jsp" />
-                <!-- end include sidebar -->
-                <div id="layoutSidenav_content">
-                    <main>
-                        <div class="container-fluid px-4">
-                            <h1 class="mt-4">Order</h1>
-                            <ol class="breadcrumb mb-4">
-                                <li class="breadcrumb-item active">Order</li>
-                            </ol>
-                            <div class="row">
-                                <div class="col-xl-3 col-md-6">
-                                    <div class="card bg-primary text-white mb-4">
-                                        <div class="card-body">Primary Card</div>
-                                        <div class="card-footer d-flex align-items-center justify-content-between">
-                                            <a class="small text-white stretched-link" href="#">View Details</a>
-                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-md-6">
-                                    <div class="card bg-warning text-white mb-4">
-                                        <div class="card-body">Warning Card</div>
-                                        <div class="card-footer d-flex align-items-center justify-content-between">
-                                            <a class="small text-white stretched-link" href="#">View Details</a>
-                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-md-6">
-                                    <div class="card bg-success text-white mb-4">
-                                        <div class="card-body">Success Card</div>
-                                        <div class="card-footer d-flex align-items-center justify-content-between">
-                                            <a class="small text-white stretched-link" href="#">View Details</a>
-                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-md-6">
-                                    <div class="card bg-danger text-white mb-4">
-                                        <div class="card-body">Danger Card</div>
-                                        <div class="card-footer d-flex align-items-center justify-content-between">
-                                            <a class="small text-white stretched-link" href="#">View Details</a>
-                                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+            <body class="sb-nav-fixed">
+                <!-- start include header -->
+                <jsp:include page="../layout/header.jsp" />
+                <!-- end include header -->
+                <div id="layoutSidenav">
+                    <!-- start include sidebar -->
+                    <jsp:include page="../layout/sidebar.jsp" />
+                    <!-- end include sidebar -->
+                    <div id="layoutSidenav_content">
+                        <main>
+                            <div class="container-fluid px-4">
+                                <h1 class="mt-4">Order</h1>
+                                <ol class="breadcrumb mb-4">
+                                    <li class="breadcrumb-item active">Order</li>
+                                </ol>
+                                <div class="mt-5">
+                                    <div class="row">
+                                        <div class="col-12 mx-auto">
+                                            <div class="d-flex justify-content-between">
+                                                <h3>Table Orders</h3>
+                                            </div>
+
+                                            <table class="table table-bordered table-hover mt-5 text-center"
+                                                style="align-items: center;">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Total Price</th>
+                                                        <th>User</th>
+                                                        <th>Status</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <c:forEach var="order" items="${orders}">
+                                                        <tr>
+                                                            <th>${order.id}</th>
+                                                            <td>
+                                                                <fmt:formatNumber type="number"
+                                                                    value="${order.totalPrice}" /> đ
+                                                            </td>
+                                                            <td>${order.user.fullName}</td>
+                                                            <td>${order.status}</td>
+                                                            <td>
+                                                                <a href="/admin/order/${order.id}"
+                                                                    class="btn btn-success">View</a>
+                                                                <a href="/admin/order/update/${order.id}"
+                                                                    class="btn btn-warning  mx-2">Update</a>
+                                                                <a href="/admin/order/delete/${order.id}"
+                                                                    class="btn btn-danger">Delete</a>
+
+                                                            </td>
+                                                        </tr>
+                                                    </c:forEach>
+
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                    </div>
+                    </main>
                 </div>
-                </main>
-            </div>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-                crossorigin="anonymous"></script>
-            <script src="js/scripts.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
-                crossorigin="anonymous"></script>
-            <script src="js/demo/chart-area-demo.js"></script>
-            <script src="ks/demo/chart-bar-demo.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-                crossorigin="anonymous"></script>
-            <script src="js/datatables-simple-demo.js"></script>
-        </body>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+                    crossorigin="anonymous"></script>
+                <script src="js/scripts.js"></script>
+            </body>
 
-        </html>
+            </html>
