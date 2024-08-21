@@ -44,6 +44,9 @@ public class User {
     String phone;
     String address;
     String avatar;
+    String receiverName;
+    String receiverAddress;
+    String receiverPhone;
 
     @ManyToOne
     @JoinColumn(name = "role_id")

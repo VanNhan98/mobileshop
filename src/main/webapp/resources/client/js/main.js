@@ -18,6 +18,12 @@ $(document).ready(function () {
         const input = button.parent().parent().find('input');
         input.val(newVal);
 
+        //set form index
+        const index = input.attr("data-cart-detail-index")
+        const el = document.getElementById(`cartDetails${index}.quantity`);
+        $(el).val(newVal);
+
+
         // Lấy giá
         const price = input.attr("data-cart-detail-price");
         const id = input.attr("data-cart-detail-id");
@@ -54,6 +60,8 @@ $(document).ready(function () {
         }
     });
 
+
+
     function formatCurrency(value) {
         // Sử dụng locale 'vi-VN' để định dạng số theo kiểu tiền tệ Việt Nam
         const formatter = new Intl.NumberFormat('vi-VN', {
@@ -66,6 +74,5 @@ $(document).ready(function () {
         formatted = formatted.replace(/\./g, ',');
         return formatted;
     }
-
 
 });
