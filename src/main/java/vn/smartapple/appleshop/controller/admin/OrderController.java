@@ -46,9 +46,26 @@ public class OrderController {
     }
 
     @PostMapping("/admin/order/update")
-    public String postUpdateOrder(Model model, @ModelAttribute("newOrder") Order order) {
-        this.orderService.updateOrder(order);
+    public String postUpdateOrder(@ModelAttribute("newOrder") Order order) {
+        Order currentOrder = this.orderService.getOrderById(order.getId()).get();
+        if (currentOrder != null) {
+            currentOrder.setStatus(order.getStatus());
+            this.orderService.handleSave(currentOrder);
+        }
+        return "redirect:/admin/order";
+    }
 
+    @GetMapping("/admin/order/delete/{id}")
+    public String getDeleteOrderPage(Model model, @PathVariable long id) {
+        model.addAttribute("id", id);
+        model.addAttribute("newOrder", new Order());
+
+        return "admin/order/delete";
+    }
+
+    @PostMapping("/admin/order/delete")
+    public String postDeleteOrder(@ModelAttribute("newOrder") Order order) {
+        this.orderService.deleteOrderById(order.getId());
         return "redirect:/admin/order";
     }
 

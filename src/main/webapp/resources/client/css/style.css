@@ -201,3 +201,38 @@
     #footer {
         background-color: #f7f5f2;
     }
+
+    .dropdown-item:hover {
+        background-color: #f7f5f2;
+    }
+
+    /*  detail sp */
+    .fruite-categorie {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .fruite-name {
+        font-size: 16px;
+        color: #DEAE6F;
+        text-decoration: none;
+    }
+
+    .fruite-name a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .fruite-name a:hover {
+        color: #191a18;
+    }
+
+    .fruite-name i {
+        font-size: 18px;
+        margin-right: 8px;
+    }
+
+    .fruite-name span {
+        font-size: 14px;
+        color: #888;
+    }

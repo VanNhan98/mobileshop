@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 
 import vn.smartapple.appleshop.domain.User;
 import vn.smartapple.appleshop.domain.dto.RegisterDTO;
+import vn.smartapple.appleshop.repository.OrderRepository;
+import vn.smartapple.appleshop.repository.ProductRepository;
 import vn.smartapple.appleshop.repository.UserRepository;
 
 @Service
@@ -14,6 +16,12 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private ProductRepository productRepository;
+
+    @Autowired
+    private OrderRepository orderRepository;
 
     public User handelUser(User user) {
         return this.userRepository.save(user);
@@ -46,6 +54,18 @@ public class UserService {
 
     public User getUserByEmail(String email) {
         return this.userRepository.findByEmail(email);
+    }
+
+    public long countUsers() {
+        return this.userRepository.count();
+    }
+
+    public long countProducts() {
+        return this.productRepository.count();
+    }
+
+    public long countOrders() {
+        return this.orderRepository.count();
     }
 
 }

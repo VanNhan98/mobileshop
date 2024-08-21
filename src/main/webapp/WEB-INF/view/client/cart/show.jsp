@@ -32,7 +32,7 @@
                                     <li class="breadcrumb-item"><a href="/"
                                             style="text-decoration: none; color: #DEAE6F; font-weight: bold;">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item active" aria-current="page">Chi Tiết Giỏ Hàng</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Shopping Cart Details</li>
                                 </ol>
                             </nav>
                         </div>
