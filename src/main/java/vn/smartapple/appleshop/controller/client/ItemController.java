@@ -100,4 +100,17 @@ public class ItemController {
         return "client/cart/checkout";
     }
 
+    @PostMapping("/place-order")
+    public String postMethodName(HttpServletRequest request, @RequestParam("receiverName") String receiverName,
+            @RequestParam("receiverAddress") String receiverAddress,
+            @RequestParam("receiverPhone") String receiverPhone) {
+        HttpSession session = request.getSession(false);
+        User user = new User();
+        long id = (long) session.getAttribute("id");
+        user.setId(id);
+        this.productService.handleCheckOutCart(user, session, receiverName, receiverAddress, receiverPhone);
+
+        return "redirect:/checkout";
+    }
+
 }
