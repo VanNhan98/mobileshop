@@ -117,22 +117,22 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="price-3"
-                                                    value="10-15-trieu">
+                                                    value="10-toi-15-trieu">
                                                 <label class="form-check-label" for="price-3">Từ 10 - 15
                                                     triệu</label>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="price-4"
-                                                    value="15-20-trieu">
-                                                <label class="form-check-label" for="price-4">Từ 15 - 20
+                                                    value="15-toi-25-trieu">
+                                                <label class="form-check-label" for="price-4">Từ 15 - 25
                                                     triệu</label>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="price-5"
-                                                    value="tren-20-trieu">
-                                                <label class="form-check-label" for="price-5">Trên 20 triệu</label>
+                                                    value="tren-25-trieu">
+                                                <label class="form-check-label" for="price-5">Trên 25 triệu</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -192,7 +192,8 @@
                                                         <p class="product-price">
                                                             <fmt:formatNumber type="number" value="${product.price}" />đ
                                                         </p>
-                                                        <form action="/add-product-to-cart/${product.id}" method="post">
+                                                        <form action="/add-product-to-cart-from-products/${product.id}"
+                                                            method="post">
                                                             <input type="hidden" name="${_csrf.parameterName}"
                                                                 value="${_csrf.token}" />
                                                             <button class="btn-add-cart btn px-3">
@@ -207,7 +208,8 @@
                                             <ul class="pagination justify-content-center">
                                                 <c:if test="${currentPage > 1}">
                                                     <li class="page-item">
-                                                        <a class="page-link" href="/products?page=${currentPage - 1}"
+                                                        <a class="page-link"
+                                                            href="/products?page=${currentPage - 1}${queryString}"
                                                             aria-label="Previous">
                                                             <span aria-hidden="true">&laquo;</span>
                                                         </a>
@@ -216,13 +218,14 @@
                                                 </c:if>
                                                 <c:forEach begin="1" end="${totalPages}" var="i">
                                                     <li class="page-item ${currentPage == i ? 'active' :''}"><a
-                                                            class="page-link" href="/products?page=${i}">
+                                                            class="page-link" href="/products?page=${i}${queryString}">
                                                             ${i}
-                                                        </a></li>   
+                                                        </a></li>
                                                 </c:forEach>
                                                 <c:if test="${totalPages > currentPage}">
                                                     <li>
-                                                        <a class="page-link" href="/product?page=${currentPage + 1}"
+                                                        <a class="page-link"
+                                                            href="/product?page=${currentPage + 1}${queryString}"
                                                             aria-label="Next">
                                                             <span aria-hidden="true">&raquo;</span>
                                                         </a>

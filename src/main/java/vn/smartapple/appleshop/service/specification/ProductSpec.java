@@ -33,6 +33,11 @@ public class ProductSpec {
 
     }
 
+    public static Specification<Product> matchListTarget(List<String> target) {
+        return (root, query, criteriaBuilder) -> criteriaBuilder.in(root.get(Product_.TARGET)).value(target);
+
+    }
+
     public static Specification<Product> matchPrice(double min, double max) {
         return (root, query, criteriaBuilder) -> criteriaBuilder.and(criteriaBuilder.ge(root.get(Product_.PRICE), min),
                 criteriaBuilder.le(root.get(Product_.PRICE), max));
