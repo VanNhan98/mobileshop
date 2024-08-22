@@ -49,62 +49,59 @@
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="factory-2"
-                                                    value="ASUS">
-                                                <label class="form-check-label" for="factory-2">Asus</label>
+                                                    value="SAMSUNG">
+                                                <label class="form-check-label" for="factory-2">SamSung</label>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="factory-3"
-                                                    value="LENOVO">
-                                                <label class="form-check-label" for="factory-3">Lenovo</label>
+                                                    value="XIAOMI">
+                                                <label class="form-check-label" for="factory-3">Xiaomi</label>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="factory-4"
-                                                    value="DELL">
-                                                <label class="form-check-label" for="factory-4">Dell</label>
+                                                    value="OPPO">
+                                                <label class="form-check-label" for="factory-4">Oppo</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="factory-5"
-                                                    value="LG">
-                                                <label class="form-check-label" for="factory-5">LG</label>
+                                                    value="VIVO">
+                                                <label class="form-check-label" for="factory-5">Vivo</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="checkbox" id="factory-6"
-                                                    value="ACER">
-                                                <label class="form-check-label" for="factory-6">Acer</label>
-                                            </div>
-
                                         </div>
                                         <div class="col-12" id="targetFilter">
                                             <div class="mb-2"><b>Mục đích sử dụng</b></div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="target-1"
                                                     value="GAMING">
-                                                <label class="form-check-label" for="target-1">Gaming</label>
+                                                <label class="form-check-label" for="target-1">Chơi game</label>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="target-2"
-                                                    value="SINHVIEN-VANPHONG">
-                                                <label class="form-check-label" for="target-2">Sinh viên - văn
-                                                    phòng</label>
+                                                    value="CHUP-ANH-DEP">
+                                                <label class="form-check-label" for="target-2">Chụp ảnh đẹp</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="target-3"
-                                                    value="THIET-KE-DO-HOA">
-                                                <label class="form-check-label" for="target-3">Thiết kế đồ
-                                                    họa</label>
+                                                    value="DIEN-THOAI-GAP">
+                                                <label class="form-check-label" for="target-3">Điện thoại gập</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="target-4"
-                                                    value="MONG-NHE">
-                                                <label class="form-check-label" for="target-4">Mỏng nhẹ</label>
+                                                    value="DUNG-LUONG-LON">
+                                                <label class="form-check-label" for="target-4">Dung lượng lớn</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="target-5"
-                                                    value="DOANH-NHAN">
-                                                <label class="form-check-label" for="target-5">Doanh nhân</label>
+                                                    value="CAU-HINH-CAO">
+                                                <label class="form-check-label" for="target-5">Cấu hình cao</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="checkbox" id="target-6"
+                                                    value="PIN-CAO">
+                                                <label class="form-check-label" for="target-5">Pin cao</label>
                                             </div>
 
 
@@ -206,6 +203,35 @@
                                                 </div>
                                             </div>
                                         </c:forEach>
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-center">
+                                                <c:if test="${currentPage > 1}">
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="/products?page=${currentPage - 1}"
+                                                            aria-label="Previous">
+                                                            <span aria-hidden="true">&laquo;</span>
+                                                        </a>
+
+                                                    </li>
+                                                </c:if>
+                                                <c:forEach begin="1" end="${totalPages}" var="i">
+                                                    <li class="page-item ${currentPage == i ? 'active' :''}"><a
+                                                            class="page-link" href="/products?page=${i}">
+                                                            ${i}
+                                                        </a></li>   
+                                                </c:forEach>
+                                                <c:if test="${totalPages > currentPage}">
+                                                    <li>
+                                                        <a class="page-link" href="/product?page=${currentPage + 1}"
+                                                            aria-label="Next">
+                                                            <span aria-hidden="true">&raquo;</span>
+                                                        </a>
+                                                    </li>
+                                                </c:if>
+
+                                            </ul>
+                                        </nav>
+
                                     </div>
                                 </div>
                             </div>

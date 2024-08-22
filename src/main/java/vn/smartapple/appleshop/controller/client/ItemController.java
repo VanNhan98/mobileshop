@@ -1,9 +1,14 @@
 package vn.smartapple.appleshop.controller.client;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,9 +42,57 @@ public class ItemController {
     }
 
     @GetMapping("/products")
-    public String getProductPage(Model model) {
-        List<Product> products = this.productService.getAllProducts();
-        model.addAttribute("products", products);
+    public String getProductPage(Model model, @RequestParam("page") Optional<String> pageOptional,
+            @RequestParam("name") Optional<String> nameOptional,
+            @RequestParam("min-price") Optional<String> minOptional,
+            @RequestParam("max-price") Optional<String> maxOptional,
+            @RequestParam("factory") Optional<String> factoryOptional,
+            @RequestParam("price") Optional<String> priceOptional,
+            @RequestParam("sort") Optional<String> sortOptional) {
+        int page = 1;
+        try {
+            if (pageOptional.isPresent()) {
+                page = Integer.parseInt(pageOptional.get());
+            }
+        } catch (Exception e) {
+
+        }
+
+        Pageable pageable = PageRequest.of(page - 1, 60);
+
+        String name = nameOptional.isPresent() ? nameOptional.get() : "";
+        Page<Product> prs = this.productService.getSixProductWithSpecAndPage(pageable, name);
+
+        // double min = minOptional.isPresent() ? Double.parseDouble(minOptional.get())
+        // : 0;
+        // Page<Product> prs =
+        // this.productService.getSixProductWithSpecAndPage(pageable, min);
+
+        // double max = maxOptional.isPresent() ? Double.parseDouble(maxOptional.get())
+        // : 0;
+        // Page<Product> prs =
+        // this.productService.getSixProductWithSpecAndPage(pageable, max);
+
+        // String factory = factoryOptional.isPresent() ? factoryOptional.get() : "";
+        // Page<Product> prs =
+        // this.productService.getSixProductWithSpecAndPage(pageable, factory);
+
+        // List<String> factory = Arrays.asList(factoryOptional.get().split(","));
+        // Page<Product> prs =
+        // this.productService.getSixProductWithSpecAndPage(pageable, factory);
+
+        // String price = priceOptional.isPresent() ? priceOptional.get() : "";
+        // Page<Product> prs =
+        // this.productService.getSixProductWithSpecAndPage(pageable, price);
+
+        // List<String> price = Arrays.asList(priceOptional.get().split(","));
+        // Page<Product> prs =
+        // this.productService.getSixProductWithSpecAndPage(pageable, price);
+        List<Product> listProducts = prs.getContent();
+
+        model.addAttribute("products", listProducts);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", prs.getTotalPages());
         return "client/product/show";
     }
 
