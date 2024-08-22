@@ -31,7 +31,7 @@
                         </div>
                         <div class="col-12 col-lg-8 text-lg-end text-start">
                             <div class="btn-product">
-                                <a href="" style="text-decoration: none; color: black;">ALL PRODUCTS</a>
+                                <a href="/products" style="text-decoration: none; color: black;">ALL PRODUCTS</a>
                             </div>
                         </div>
                     </div>

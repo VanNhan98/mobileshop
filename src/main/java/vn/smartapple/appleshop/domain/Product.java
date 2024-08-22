@@ -53,7 +53,7 @@ public class Product {
     long quantity;
     long sold;
     String factory;
-    String size;
+    String target;
 
     @OneToMany(mappedBy = "product")
     List<CartDetail> cartDetails;

@@ -1,8 +1,12 @@
 package vn.smartapple.appleshop.controller.admin;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,9 +33,22 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/admin/product")
-    public String getProductPage(Model model) {
-        List<Product> list = this.productService.getAllProducts();
-        model.addAttribute("products", list);
+    public String getProductPage(Model model, @RequestParam("page") Optional<String> pageOptional) {
+        int page = 1;
+        try {
+            if (pageOptional.isPresent()) {
+                page = Integer.parseInt(pageOptional.get());
+            }
+        } catch (Exception e) {
+
+        }
+
+        Pageable pageable = PageRequest.of(page - 1, 2);
+        Page<Product> prs = this.productService.getAllProductsByPageable(pageable);
+        List<Product> listProduct = prs.getContent();
+        model.addAttribute("products", listProduct);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", prs.getTotalPages());
         return "admin/product/show";
     }
 
@@ -100,7 +117,7 @@ public class ProductController {
             productCurrent.setDetailDesc(product.getDetailDesc());
             productCurrent.setShortDesc(product.getShortDesc());
             productCurrent.setQuantity(product.getQuantity());
-            productCurrent.setSize(product.getSize());
+            productCurrent.setTarget(product.getTarget());
 
             this.productService.saveProduct(productCurrent);
         }

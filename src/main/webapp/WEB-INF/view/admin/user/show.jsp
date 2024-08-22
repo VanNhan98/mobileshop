@@ -25,7 +25,10 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Dashboard</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active"> <a href="/admin">Dashboard</a> </li>
+                            <li class="breadcrumb-item active"> <a href="/admin"
+                                    style="text-decoration: none; color: black;">Dashboard</a> </li>
+                            <li class="breadcrumb-item active"> <a href="/admin/user"
+                                    style="text-decoration: none; color: black;">User</a> </li>
                         </ol>
                         <div class="mt-5">
                             <div class="row">
@@ -68,6 +71,34 @@
                                             </c:forEach>
                                         </tbody>
                                     </table>
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
+                                            <c:if test="${currentPage > 1}">
+                                                <li class="page-item">
+                                                    <a class="page-link" href="/admin/user?page=${currentPage - 1}"
+                                                        aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+
+                                                </li>
+                                            </c:if>
+                                            <c:forEach begin="1" end="${totalPages}" var="i">
+                                                <li class="page-item ${currentPage == i ? 'active' :''}"><a
+                                                        class="page-link" href="/admin/user?page=${i}">
+                                                        ${i}
+                                                    </a></li>
+                                            </c:forEach>
+                                            <c:if test="${totalPages > currentPage}">
+                                                <li>
+                                                    <a class="page-link" href="/admin/user?page=${currentPage + 1}"
+                                                        aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
+                                            </c:if>
+
+                                        </ul>
+                                    </nav>
                                 </div>
                             </div>
                         </div>

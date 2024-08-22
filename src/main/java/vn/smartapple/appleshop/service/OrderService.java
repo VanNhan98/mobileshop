@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import vn.smartapple.appleshop.domain.Order;
@@ -20,8 +22,8 @@ public class OrderService {
     @Autowired
     private OrderDetailRepository orderDetailRepository;
 
-    public List<Order> fetchAllOrders() {
-        return this.orderRepository.findAll();
+    public Page<Order> fetchAllOrders(Pageable page) {
+        return this.orderRepository.findAll(page);
     }
 
     public Optional<Order> getOrderById(long id) {

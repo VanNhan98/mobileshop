@@ -52,21 +52,19 @@
                                                             <label class="form-check-label">Remember
                                                                 Password</label>
                                                         </div>
-                                                        <div
-                                                            class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                            <a class="small" href="password.html">Forgot Password?</a>
-                                                            <div class="mt-4 mb-0">
-                                                                <div class="d-grid">
-                                                                    <button class="btn btn-primary btn-block">
-                                                                        Login
-                                                                    </button>
-                                                                </div>
+                                                        <div class=" mt-4 mb-0">
+
+                                                            <div class="d-grid">
+                                                                <button class="btn btn-primary btn-block ">
+                                                                    Login
+                                                                </button>
                                                             </div>
+
                                                         </div>
                                                     </form>
                                                 </div>
                                                 <div class="card-footer text-center py-3">
-                                                    <div class="small"><a href="register.html">Need an account? Sign
+                                                    <div class="small"><a href="/register">Need an account? Sign
                                                             up!</a></div>
                                                 </div>
                                             </div>

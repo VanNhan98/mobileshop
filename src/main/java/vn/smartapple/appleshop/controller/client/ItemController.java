@@ -36,6 +36,13 @@ public class ItemController {
         return "client/product/detail";
     }
 
+    @GetMapping("/products")
+    public String getProductPage(Model model) {
+        List<Product> products = this.productService.getAllProducts();
+        model.addAttribute("products", products);
+        return "client/product/show";
+    }
+
     @PostMapping("/add-product-to-cart/{id}")
     public String addProductToCart(Model model, @PathVariable long id, HttpServletRequest request) {
         long productId = id;

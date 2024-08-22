@@ -70,6 +70,36 @@
 
                                                 </tbody>
                                             </table>
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination justify-content-center">
+                                                    <c:if test="${currentPage > 1}">
+                                                        <li class="page-item">
+                                                            <a class="page-link"
+                                                                href="/admin/order?page=${currentPage - 1}"
+                                                                aria-label="Previous">
+                                                                <span aria-hidden="true">&laquo;</span>
+                                                            </a>
+
+                                                        </li>
+                                                    </c:if>
+                                                    <c:forEach begin="1" end="${totalPages}" var="i">
+                                                        <li class="page-item ${currentPage == i ? 'active' :''}"><a
+                                                                class="page-link" href="/admin/order?page=${i}">
+                                                                ${i}
+                                                            </a></li>
+                                                    </c:forEach>
+                                                    <c:if test="${totalPages > currentPage}">
+                                                        <li>
+                                                            <a class="page-link"
+                                                                href="/admin/order?page=${currentPage + 1}"
+                                                                aria-label="Next">
+                                                                <span aria-hidden="true">&raquo;</span>
+                                                            </a>
+                                                        </li>
+                                                    </c:if>
+
+                                                </ul>
+                                            </nav>
                                         </div>
                                     </div>
                                 </div>

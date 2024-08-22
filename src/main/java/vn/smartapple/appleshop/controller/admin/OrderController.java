@@ -1,8 +1,12 @@
 package vn.smartapple.appleshop.controller.admin;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +17,6 @@ import vn.smartapple.appleshop.domain.Order;
 import vn.smartapple.appleshop.service.OrderService;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class OrderController {
@@ -21,9 +24,19 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping("/admin/order")
-    public String getOrderPage(Model model) {
-        List<Order> orders = this.orderService.fetchAllOrders();
-        model.addAttribute("orders", orders);
+    public String getOrderPage(Model model, @RequestParam("page") Optional<String> pageOptional) {
+        int page = 1;
+        try {
+            page = Integer.parseInt(pageOptional.get());
+        } catch (Exception e) {
+
+        }
+        Pageable pageable = PageRequest.of(page - 1, 2);
+        Page<Order> ord = this.orderService.fetchAllOrders(pageable);
+        List<Order> listOrder = ord.getContent();
+        model.addAttribute("orders", listOrder);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", ord.getTotalPages());
         return "admin/order/show";
     }
 
