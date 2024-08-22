@@ -22,6 +22,7 @@ import vn.smartapple.appleshop.domain.Cart;
 import vn.smartapple.appleshop.domain.CartDetail;
 import vn.smartapple.appleshop.domain.Product;
 import vn.smartapple.appleshop.domain.User;
+import vn.smartapple.appleshop.domain.dto.ProductCriteriaDTO;
 import vn.smartapple.appleshop.service.ProductService;
 
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,17 +43,11 @@ public class ItemController {
     }
 
     @GetMapping("/products")
-    public String getProductPage(Model model, @RequestParam("page") Optional<String> pageOptional,
-            @RequestParam("name") Optional<String> nameOptional,
-            @RequestParam("min-price") Optional<String> minOptional,
-            @RequestParam("max-price") Optional<String> maxOptional,
-            @RequestParam("factory") Optional<String> factoryOptional,
-            @RequestParam("price") Optional<String> priceOptional,
-            @RequestParam("sort") Optional<String> sortOptional) {
+    public String getProductPage(Model model, ProductCriteriaDTO productCriteriaDTO) {
         int page = 1;
         try {
-            if (pageOptional.isPresent()) {
-                page = Integer.parseInt(pageOptional.get());
+            if (productCriteriaDTO.getPage().isPresent()) {
+                page = Integer.parseInt(productCriteriaDTO.getPage().get());
             }
         } catch (Exception e) {
 
@@ -60,8 +55,7 @@ public class ItemController {
 
         Pageable pageable = PageRequest.of(page - 1, 60);
 
-        String name = nameOptional.isPresent() ? nameOptional.get() : "";
-        Page<Product> prs = this.productService.getSixProductWithSpecAndPage(pageable, name);
+        Page<Product> prs = this.productService.getSixProductWithSpecAndPage(pageable);
 
         // double min = minOptional.isPresent() ? Double.parseDouble(minOptional.get())
         // : 0;

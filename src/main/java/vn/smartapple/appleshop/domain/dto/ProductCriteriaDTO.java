@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import lombok.AccessLevel;
 
 @Data
 @AllArgsConstructor
@@ -18,3 +19,4 @@ public class ProductCriteriaDTO {
     Optional<List<String>> target;
     Optional<List<String>> price;
     Optional<String> sort;
+}
