@@ -24,8 +24,8 @@
                 <jsp:include page="../layout/header.jsp" />
 
 
-                <div class="container" style="margin-top: 100px;">
-                    <div class="row ">
+                <div class="container">
+                    <div class="row " style="margin: 100px 0;">
                         <div class="col-12 mt-5">
                             <div class="alert alert-success" role="alert">
                                 Cảm ơn bạn đã đặt hàng, đơn hàng đã được xác nhận thành công.
