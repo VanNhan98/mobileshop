@@ -53,7 +53,7 @@
                                                 </li>
                                                 <li class="list-group-item">Factory: ${product.factory} </li>
                                                 <li class="list-group-item">Quantity: ${product.quantity} </li>
-                                                <li class="list-group-item">Size: ${product.size} </li>
+                                                <li class="list-group-item">Size: ${product.target} </li>
                                             </ul>
 
                                         </div>

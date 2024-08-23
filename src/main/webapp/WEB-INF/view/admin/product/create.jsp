@@ -112,11 +112,14 @@
                                                     </form:select>
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
-                                                    <label class="form-label">Size:</label>
-                                                    <form:select class="form-select" path="size">
-                                                        <form:option value="SMALL">Small</form:option>
-                                                        <form:option value="MEDIUM">Medium</form:option>
-                                                        <form:option value="BIG">Big</form:option>
+                                                    <label class="form-label">Target:</label>
+                                                    <form:select class="form-select" path="target">
+                                                        <form:option value="CHOI-GAME">Chơi game </form:option>
+                                                        <form:option value="CHUP-ANH-DEP">Chụp ảnh đẹp </form:option>
+                                                        <form:option value="DIEN-THOAI-GAP">Điện thoại gập</form:option>
+                                                        <form:option value="DUNG-LUONG-LON">Dung lượng lớn</form:option>
+                                                        <form:option value="CAU-HINH-CAO">Cấu hình cao</form:option>
+                                                        <form:option value="PIN-CAO">Pin Cao</form:option>
 
                                                     </form:select>
                                                 </div>

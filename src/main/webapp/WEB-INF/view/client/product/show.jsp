@@ -161,7 +161,7 @@
                                         </div>
                                         <div class="col-12">
                                             <button
-                                                class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4"
+                                                class="btn-add-cart btn border-secondary rounded-pill px-4 py-3  text-uppercase mb-4"
                                                 id="btnFilter">
                                                 Lọc Sản Phẩm
                                             </button>

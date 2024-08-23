@@ -53,7 +53,7 @@
                     </c:if>
                     <c:if test="${empty pageContext.request.userPrincipal}">
                         <a href="/login"
-                            style="text-decoration: none; color: #DEAE6F; font-weight: bold; font-size: 1rem;">
+                            style="text-decoration: none; color: #72AEC8; font-weight: bold; font-size: 1rem;">
                             <i class="fa-solid fa-right-to-bracket"></i>
                             Login
                         </a>
