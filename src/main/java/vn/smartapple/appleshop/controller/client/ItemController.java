@@ -183,7 +183,12 @@ public class ItemController {
         user.setId(id);
         this.productService.handleCheckOutCart(user, session, receiverName, receiverAddress, receiverPhone);
 
-        return "redirect:/checkout";
+        return "redirect:/thanks";
+    }
+
+    @GetMapping("/thanks")
+    public String getThanksPage(Model model) {
+        return "client/cart/thanks";
     }
 
 }

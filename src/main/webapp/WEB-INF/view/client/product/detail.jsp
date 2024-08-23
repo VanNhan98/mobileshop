@@ -92,35 +92,34 @@
                             <div class="row g-4 fruite">
                                 <div class="col-lg-12">
                                     <div class="mb-4">
-                                        <h4>Categories</h4>
-                                        <ul class="list-unstyled fruite-categorie my-3"
-                                            style="text-decoration: none; color: #DEAE6F;">
+                                        <h4>Factory</h4>
+                                        <ul class="list-unstyled  my-3">
                                             <li>
-                                                <div class="d-flex justify-content-between fruite-name mb-3">
+                                                <div class="d-flex justify-content-between factory-name mb-3">
                                                     <a href="#"><i class="fas fa-apple-alt me-2"></i>Sam Sung</a>
                                                     <span>(3)</span>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="d-flex justify-content-between fruite-name mb-3">
+                                                <div class="d-flex justify-content-between factory-name mb-3">
                                                     <a href="#"><i class="fas fa-apple-alt me-2"></i>Apple</a>
                                                     <span>(5)</span>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="d-flex justify-content-between fruite-name mb-3">
+                                                <div class="d-flex justify-content-between factory-name mb-3">
                                                     <a href="#"><i class="fas fa-apple-alt me-2"></i>Vivo</a>
                                                     <span>(2)</span>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="d-flex justify-content-between fruite-name mb-3">
+                                                <div class="d-flex justify-content-between factory-name mb-3">
                                                     <a href="#"><i class="fas fa-apple-alt me-2"></i>Xiomi</a>
                                                     <span>(8)</span>
                                                 </div>
                                             </li>
                                             <li>
-                                                <div class="d-flex justify-content-between fruite-name">
+                                                <div class="d-flex justify-content-between factory-name">
                                                     <a href="#"><i class="fas fa-apple-alt me-2"></i>Oppo</a>
                                                     <span>(5)</span>
                                                 </div>

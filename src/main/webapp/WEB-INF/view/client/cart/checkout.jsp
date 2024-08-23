@@ -148,6 +148,12 @@
                                                         <p class="mb-0">0</p>
                                                     </div>
                                                 </div>
+                                                <div class="mt-3 d-flex justify-content-between">
+                                                    <h5 class="mb-0 me-4">Formality</h5>
+                                                    <div class="">
+                                                        <p class="mb-0">Payment Upon Receipt (COD)</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div
                                                 class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
@@ -164,9 +170,9 @@
 
                                     </div>
                             </form>
-
+                        </c:if>
                     </div>
-                    </c:if>
+
 
 
                     <!-- Cart Page End -->

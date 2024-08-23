@@ -61,9 +61,7 @@
                             </p>
                             <p style="text-decoration: none; color: black;">If you need support? Just give
                                 us a
-                                call. <a href="" style="text-decoration: none; color: black;">+55 111 222
-                                    333
-                                    44</a>
+                                call. <a href="" style="text-decoration: none; color: black;">+123456789</a>
                             </p>
                         </div>
                     </div>

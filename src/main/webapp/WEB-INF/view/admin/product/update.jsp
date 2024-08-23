@@ -124,7 +124,7 @@
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
                                                     <label class="form-label">Target:</label>
-                                                    <form:select class="form-select" path="size">
+                                                    <form:select class="form-select" path="target">
                                                         <form:option value="CHOI-GAME">Chơi game </form:option>
                                                         <form:option value="CHUP-ANH-DEP">Chụp ảnh đẹp </form:option>
                                                         <form:option value="DIEN-THOAI-GAP">Điện thoại gập</form:option>
@@ -162,11 +162,6 @@
                 <script src="js/scripts.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
                     crossorigin="anonymous"></script>
-                <script src="js/demo/chart-area-demo.js"></script>
-                <script src="ks/demo/chart-bar-demo.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-                    crossorigin="anonymous"></script>
-                <script src="js/datatables-simple-demo.js"></script>
             </body>
 
             </html>

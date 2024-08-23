@@ -26,16 +26,14 @@
                 <!--  products items -->
                 <div class="container">
                     <div class="row align-items-center mb-3">
-                        <div class="col-12 col-lg-4 text-start mb-2 mb-lg-0">
+                        <div class="col-12 col-lg-4 d-flex justify-content-start">
                             <h3>MOBILE PRODUCTS</h3>
                         </div>
-                        <div class="col-12 col-lg-8 text-lg-end text-start">
-                            <div class="btn-product">
-                                <a href="/products" style="text-decoration: none; color: black;">ALL PRODUCTS</a>
-                            </div>
+                        <div class="col-12 col-lg-8 d-flex justify-content-lg-end justify-content-start">
+                            <a href="/products" class="btn btn-product">ALL PRODUCTS</a>
                         </div>
                     </div>
-                    <div class="row g-4 mt-3">
+                    <div class=" row g-4 mt-3">
                         <c:forEach var="product" items="${products}">
                             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                                 <div class="product-item mb-4 position-relative">

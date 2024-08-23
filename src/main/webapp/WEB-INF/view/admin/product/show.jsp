@@ -25,16 +25,16 @@
                     <div id="layoutSidenav_content">
 
                         <div class="container-fluid px-4">
-                            <h1 class="mt-4">Product</h1>
+                            <h1 class="mt-4">Manage Products</h1>
                             <ol class="breadcrumb mb-4">
-                                <li class="breadcrumb-item active">Product</li>
+                                <li class="breadcrumb-item active"><a href="/admin">Dashboard</a></li>
                             </ol>
                             <div class="mt-5">
                                 <div class="row">
                                     <div class="col-12 mx-auto">
                                         <div class="d-flex justify-content-between">
                                             <h3>Table Products</h3>
-                                            <a href="/admin/product/create" class="btn btn-primary">Create Product</a>
+                                            <a href="/admin/product/create" class="btn btn-primary">Create</a>
                                         </div>
 
                                         <table class="table table-bordered table-hover mt-5 text-center"

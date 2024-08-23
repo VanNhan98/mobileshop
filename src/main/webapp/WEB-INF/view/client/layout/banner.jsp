@@ -1,5 +1,5 @@
-<div class="container-fluid py-5 mb-5" style="margin-top: 25px;">
-    <div class="container py-5">
+<div class="container-fluid  py-5 mb-5" style="margin-top: 25px;">
+    <div class="container py-5 ">
         <div class="row g-5 align-items-center">
             <div class="col-md-12 col-lg-7">
                 <h4 class="mb-3 ">100% Genuine Product</h4>

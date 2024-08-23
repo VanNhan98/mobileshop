@@ -30,9 +30,11 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="/"
-                                            style="text-decoration: none; color: #DEAE6F; font-weight: bold;">Home</a>
+                                            style="text-decoration: none; color: #72AEC8; font-weight: 500;">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item active" aria-current="page">Shopping Cart Details</li>
+                                    <li class="breadcrumb-item active" aria-current="page">
+                                        Shopping Cart Details
+                                    </li>
                                 </ol>
                             </nav>
                         </div>
@@ -118,19 +120,22 @@
                                 </tbody>
 
                             </table>
-                            <c:if test="${ empty cartDetails}">
-                                <tr>
-                                    <td colspan="6">
-                                        Không có sản phẩm trong giỏ hàng
-                                    </td>
-                                </tr>
-                            </c:if>
+                            <div style="margin-top: 60px;">
+                                <c:if test="${ empty cartDetails}">
+                                    <tr>
+                                        <td colspan="6">
+                                            Không có sản phẩm trong giỏ hàng
+                                        </td>
+                                    </tr>
+                                </c:if>
+
+                            </div>
 
                         </div>
                         <c:if test="${not empty cartDetails}">
                             <div class="mt-5 row justify-content-start">
                                 <div class="col-12 col-md-8">
-                                    <div class=" rounded" style="background-color:#F9F3EC">
+                                    <div class=" rounded" style="background-color:#dae2e9">
                                         <div class="p-4">
                                             <h1 class="display-6 mb-4">Order <span class="fw-normal">Information</span>
                                             </h1>

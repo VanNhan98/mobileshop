@@ -25,17 +25,19 @@
                     <jsp:include page="../layout/header.jsp" />
                     <!-- end include header -->
 
-                    <div class="container py-5" style="margin-top: 120px;">
+                    <div class="container py-5" style="margin-top: 100px;">
                         <div class="row g-4 mb-5">
-                            <div>
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Danh Sách Sản Phẩm
-                                        </li>
-                                    </ol>
-                                </nav>
-                            </div>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/"
+                                            style="text-decoration: none; color: #72AEC8; font-weight: 500;">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">
+                                        List Product
+                                    </li>
+                                </ol>
+                            </nav>
+
 
                             <div class="row g-4 fruite">
                                 <div class="col-12 col-md-4">

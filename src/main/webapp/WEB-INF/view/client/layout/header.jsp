@@ -6,24 +6,24 @@
                     <img src="/client/images/logo.png">
                 </div>
                 <div class="col-6 col-md-6 menu d-flex p-2 ">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/products">Product</a></li>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/products">PRODUCT</a></li>
                 </div>
 
                 <div class="col-6 col-md-4 other d-flex px-5">
                     <c:if test="${not empty pageContext.request.userPrincipal}">
                         <a href="/cart" class="position-relative me-4 my-auto" style="font-size: 1.4rem;">
-                            <i class="fa-solid fa-cart-shopping" style="color: #DEAE6F;"></i>
+                            <i class="fa-solid fa-cart-shopping" style="color: black;"></i>
                             <span
                                 class="position-absolute rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                                style="top: -5px; left: 15px; height: 16px; min-width: 18px; font-size: 0.8rem; background-color: rgb(188, 239, 101);">
+                                style="top: -5px; left: 15px; height: 16px; min-width: 18px; font-size: 0.8rem; background-color:#72AEC8;">
                                 ${sessionScope.sum}
                             </span>
                         </a>
                         <div class="dropdown my-auto">
                             <a href="#" class="dropdown" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
                                 aria-expanded="false" data-bs-toggle="dropdown" aria-expanded="false"
-                                style="color: #DEAE6F; font-size: 1.4rem;">
+                                style="color: black; font-size: 1.4rem;">
                                 <i class="fa-solid fa-user"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end p-4" arialabelledby="dropdownMenuLink">
