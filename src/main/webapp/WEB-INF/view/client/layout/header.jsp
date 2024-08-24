@@ -16,7 +16,8 @@
                             <i class="fa-solid fa-cart-shopping" style="color: black;"></i>
                             <span
                                 class="position-absolute rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                                style="top: -5px; left: 15px; height: 16px; min-width: 18px; font-size: 0.8rem; background-color:#72AEC8;">
+                                style="top: -5px; left: 15px; height: 16px; min-width: 18px; font-size: 0.8rem; background-color:#72AEC8;"
+                                id="sumCart">
                                 ${sessionScope.sum}
                             </span>
                         </a>
@@ -52,7 +53,7 @@
                         </div>
                     </c:if>
                     <c:if test="${empty pageContext.request.userPrincipal}">
-                        <a href="/login"
+                        <a href="/login " class="a-login"
                             style="text-decoration: none; color: #72AEC8; font-weight: bold; font-size: 1rem;">
                             <i class="fa-solid fa-right-to-bracket"></i>
                             Login

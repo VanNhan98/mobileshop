@@ -8,6 +8,7 @@
             <head>
                 <meta charset="utf-8" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+                <title>View Order</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                 <link href="/css/styles.css" rel="stylesheet" />
 
@@ -46,13 +47,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <!-- <c:if test="${ empty cartDetails}">
-                                                            <tr>
-                                                                <td colspan="6">
-                                                                    Không có sản phẩm trong giỏ hàng
-                                                                </td>
-                                                            </tr>
-                                                        </c:if> -->
+
                                                         <c:forEach var="orderDetail" items="${orderDetails}">
 
                                                             <tr>
@@ -112,10 +107,6 @@
 
                     </div>
                 </div>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-                    crossorigin="anonymous"></script>
-                <script src="/js/scripts.js"></script>
-
             </body>
 
             </html>
